@@ -17,6 +17,5 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('products', ['as' => 'products', function () {
-    return App\ Product::all();
-}]);
+Route::resource('products', 'ProductController', ['only' => ['index', 'store', 'update']]);
+Route::resource('products.descriptions', 'ProductDescriptionController', ['only' => ['index', 'store']]);
