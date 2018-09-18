@@ -14,7 +14,7 @@ class ProductDescriptionController extends Controller
      */
     public function index($productId)
     {
-        return Description::ofProduct($productId)->get();
+        return Description::ofProduct($productId)->paginate();
     }
 
     /**
