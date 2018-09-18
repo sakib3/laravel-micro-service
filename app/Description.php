@@ -9,4 +9,8 @@ class Description extends Model
     public function product(){
         return $this->belongsTo(Product::class);
     }
+
+    public function scopeOfProduct($query, $productId){
+        return $query->where('product_id', $productId);
+    }
 }

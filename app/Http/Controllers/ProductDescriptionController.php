@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Description;
 
 class ProductDescriptionController extends Controller
 {
@@ -11,9 +12,9 @@ class ProductDescriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($productId)
     {
-        //
+        return Description::ofProduct($productId)->get();
     }
 
     /**
