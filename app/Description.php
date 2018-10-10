@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Description extends Model
 {
     public function product(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(\App\Product::class);
     }
 
     public function scopeOfProduct($query, $productId){
